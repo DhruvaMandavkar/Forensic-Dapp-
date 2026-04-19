@@ -16,6 +16,19 @@ frontend/build/
 # ── Compiled contract artifacts ────────────────────────────────
 scripts/compiled.json
 
+# ── Test / debug / temp files ──────────────────────────────────
+frontend/src/AppSimple.jsx
+frontend/src/Diagnostic.jsx
+frontend/src/components/InputTest.jsx
+frontend/src/components/LoginPageTest.jsx
+frontend/public/health-check.html
+frontend/public/health.html
+frontend/public/test.html
+scripts/checkOwner.js
+scripts/fetchRoot.js
+PROGRAM_STATUS.md
+package-lock.json
+
 # ── Logs ───────────────────────────────────────────────────────
 *.log
 npm-debug.log*
