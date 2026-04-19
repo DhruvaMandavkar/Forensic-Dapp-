@@ -1,0 +1,343 @@
+/* ============================================================
+   ForensicChain — Role Selector Page
+   Professional Government / Official Website Style
+   ============================================================ */
+
+/* ── Page Background ── */
+.role-selector-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, #0a1628 0%, #0f2444 40%, #1a3a5c 75%, #0d2035 100%);
+}
+
+/* Subtle grid overlay */
+.role-selector-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* Radial glow behind content */
+.role-selector-page::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(232,160,32,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Header Block ── */
+.role-selector-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Top emblem / seal line */
+.role-selector-emblem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.role-selector-emblem-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e8a020, transparent);
+}
+
+.role-selector-emblem-icon {
+  font-size: 2.6rem;
+  filter: drop-shadow(0 0 12px rgba(232,160,32,0.5));
+}
+
+/* Title */
+.role-selector-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.role-selector-title span {
+  color: #e8a020;
+}
+
+/* Subtitle */
+.role-selector-sub {
+  font-size: 0.95rem;
+  color: #8fb8d8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+/* Divider */
+.role-selector-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e8a020, transparent);
+  margin: 1rem auto;
+}
+
+/* Instruction text */
+.role-selector-instruction {
+  color: #7aa8c8;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+}
+
+/* ── Role Grid ── */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Role Card ── */
+.role-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 2.2rem 1.6rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* Top accent bar */
+.role-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #e8a020, transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Glow on hover */
+.role-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(232,160,32,0.12) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(232, 160, 32, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(232, 160, 32, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.role-card:hover::before,
+.role-card:hover::after {
+  opacity: 1;
+}
+
+.role-card:active {
+  transform: translateY(-2px);
+}
+
+/* ── Card — Forensic Official (featured) ── */
+.role-card.role-forensic {
+  border-color: rgba(232, 160, 32, 0.25);
+  background: rgba(232, 160, 32, 0.06);
+}
+
+.role-card.role-forensic::before {
+  opacity: 0.6;
+}
+
+/* ── Icon ── */
+.role-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.role-card:hover .role-icon-wrap {
+  background: rgba(232, 160, 32, 0.15);
+  border-color: rgba(232, 160, 32, 0.4);
+  transform: scale(1.08);
+}
+
+.role-icon {
+  font-size: 2rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card Text ── */
+.role-card h3 {
+  color: #e8f0f8;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.role-card p {
+  color: #7aa8c8;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card Badge (optional role tag) ── */
+.role-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(232, 160, 32, 0.15);
+  color: #e8a020;
+  border: 1px solid rgba(232, 160, 32, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.role-badge.badge-restricted {
+  background: rgba(192, 57, 43, 0.15);
+  color: #e74c3c;
+  border-color: rgba(192, 57, 43, 0.3);
+}
+
+.role-badge.badge-limited {
+  background: rgba(39, 174, 96, 0.12);
+  color: #2ecc71;
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.role-badge.badge-public {
+  background: rgba(52, 152, 219, 0.12);
+  color: #5dade2;
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+/* ── Footer Link ── */
+.role-selector-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.role-selector-footer p {
+  color: #5a7a96;
+  font-size: 0.85rem;
+}
+
+.role-selector-footer .login-link {
+  color: #e8a020;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s;
+  border-bottom: 1px solid transparent;
+}
+
+.role-selector-footer .login-link:hover {
+  color: #f0b840;
+  border-bottom-color: #f0b840;
+}
+
+/* ── Security Notice ── */
+.role-selector-notice {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #3d5a72;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.role-selector-notice::before,
+.role-selector-notice::after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: #3d5a72;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .role-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 580px;
+  }
+}
+
+@media (max-width: 520px) {
+  .role-selector-title {
+    font-size: 1.7rem;
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+
+  .role-card {
+    padding: 1.8rem 1.4rem 1.6rem;
+  }
+}
